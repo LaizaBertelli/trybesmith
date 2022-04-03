@@ -1,4 +1,3 @@
-import Login from '../interfaces/login.interface';
 import User from '../interfaces/user.interface';
 import connection from '../models/connection';
 import UserModel from '../models/user.model';
@@ -10,8 +9,9 @@ export default class LoginService {
     this.model = new UserModel(connection);
   }
 
-  public async createLogin(login: Login): Promise<User[]> {
-    const newLogin = this.model.findByName(login.username);
+  public async create(login: User): Promise<User[]> {
+    console.log(login);
+    const newLogin = await this.model.findByName(login.username);
 
     return newLogin;
   }
