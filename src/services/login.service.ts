@@ -10,7 +10,6 @@ export default class LoginService {
   }
 
   public async create(login: User): Promise<User[]> {
-    console.log(login);
     const newLogin = await this.model.findByName(login.username);
 
     return newLogin;

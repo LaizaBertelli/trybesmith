@@ -24,7 +24,7 @@ export default class UserModel {
       'SELECT * FROM Trybesmith.Users WHERE username = ?',
       [username],
     );
-
+  
     return user as User[];
   }
 }
